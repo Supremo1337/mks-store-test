@@ -5,19 +5,17 @@ import Header from "../Header";
 import { CartProvider } from "@/contexts/cartContext";
 
 const mockSetOpenCart = jest.fn();
-const mockSetCartItems = jest.fn();
 
 jest.mock("../../contexts/cartContext", () => ({
   ...jest.requireActual("../../contexts/cartContext"),
   useCart: () => ({
     setOpenCart: mockSetOpenCart,
     cartItems: { data: [] },
-    setCartItems: mockSetCartItems,
   }),
 }));
 
 describe("Header", () => {
-  it("should open ShoppingCart when hits the button ShoppingCartButton", () => {
+  it("should open ShoppingCart when hits the button 'ShoppingCartButton'", () => {
     const client = new QueryClient();
     render(
       <QueryClientProvider client={client}>

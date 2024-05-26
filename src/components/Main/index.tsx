@@ -4,7 +4,7 @@ import ItemCard from "../ItemCard";
 import { ItemData, ItemResponse } from "@/interfaces/item-data";
 import { useItemData } from "@/hooks/useItemData";
 import { Skeleton } from "@mui/material";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Main() {
   const { data, isLoading } = useItemData();
@@ -23,7 +23,9 @@ export default function Main() {
             {isLoading ? (
               <Skeleton variant="rounded" width={217} height={285} />
             ) : (
-              <ItemCard key={itemData.id} itemData={itemData} i={i} />
+              <AnimatePresence>
+                <ItemCard key={itemData.id} itemData={itemData} i={i} />{" "}
+              </AnimatePresence>
             )}
           </>
         );

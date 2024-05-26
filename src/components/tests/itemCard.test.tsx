@@ -7,13 +7,11 @@ import { ItemData } from "@/interfaces/item-data";
 import * as cartContext from "../../contexts/cartContext";
 import "../tests/mocks/intersectionObserverMock";
 
-const mockSetOpenCart = jest.fn();
 const mockSetCartItems = jest.fn();
 
 jest.mock("../../contexts/cartContext", () => ({
   ...jest.requireActual("../../contexts/cartContext"),
   useCart: () => ({
-    setOpenCart: mockSetOpenCart,
     cartItems: { data: [] },
     setCartItems: mockSetCartItems,
   }),
