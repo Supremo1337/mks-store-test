@@ -7,6 +7,7 @@ import { useCart } from "@/contexts/cartContext";
 import { ItemData } from "@/interfaces/item-data";
 import { useItemData } from "@/hooks/useItemData";
 import { Skeleton } from "@mui/material";
+import { motion } from "framer-motion";
 
 export default function ShoppingCart() {
   const { setOpenCart, cartItems } = useCart();
@@ -20,8 +21,14 @@ export default function ShoppingCart() {
     return sum;
   };
 
+  const animProps = {
+    initial: { opacity: 0, x: 400 },
+    whileInView: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: 400 },
+  };
+
   return (
-    <S.Content>
+    <S.Content as={motion.div} {...animProps} transition={{ duration: 0.5 }}>
       <S.CartContent>
         <S.TitleAndCloseBox>
           <GS.BoldText $fontSize="24px" color={theme.colors.white.white_100}>
@@ -40,7 +47,7 @@ export default function ShoppingCart() {
           </S.CloseButton>
         </S.TitleAndCloseBox>
         <S.ItemsContainer>
-          {cartItems.data.map((cartItemData: ItemData) => {
+          {cartItems.data.map((cartItemData: ItemData, i: number) => {
             return (
               <>
                 {isLoading ? (
@@ -49,6 +56,7 @@ export default function ShoppingCart() {
                   <ItemInShoppingCart
                     key={cartItemData.id}
                     cartItemData={cartItemData}
+                    i={i}
                   />
                 )}
               </>

@@ -7,6 +7,7 @@ import ShoppingCart from "../ShoppingCart";
 import ItemCard from "../ItemCard";
 import { ItemData } from "@/interfaces/item-data";
 import * as cartContext from "../../contexts/cartContext";
+import { AnimatePresence } from "framer-motion";
 
 const mockSetOpenCart = jest.fn();
 const mockSetCartItems = jest.fn();
@@ -65,6 +66,8 @@ describe("ItemCard", () => {
       setOpenCart: () => {},
     });
 
+    let i = 1;
+
     const itemData: ItemData = {
       id: 1,
       name: "Product 1",
@@ -82,7 +85,7 @@ describe("ItemCard", () => {
     render(
       <QueryClientProvider client={client}>
         <CartProvider>
-          <ItemCard itemData={itemData} />
+          <ItemCard i={i} itemData={itemData} />
         </CartProvider>
       </QueryClientProvider>
     );
@@ -100,7 +103,9 @@ describe("ShoppingCart", () => {
     render(
       <QueryClientProvider client={client}>
         <CartProvider>
-          <ShoppingCart />
+          <AnimatePresence>
+            <ShoppingCart />
+          </AnimatePresence>
         </CartProvider>
       </QueryClientProvider>
     );

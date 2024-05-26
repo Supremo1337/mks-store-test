@@ -5,12 +5,14 @@ import * as GS from "@/styles/globalStyles";
 import { theme } from "@/styles/themes";
 import { ItemData, ItemResponse } from "@/interfaces/item-data";
 import { useCart } from "@/contexts/cartContext";
+import { motion } from "framer-motion";
 
 interface ItemCardProps {
   itemData: ItemData;
+  i: number;
 }
 
-export default function ItemCard({ itemData }: ItemCardProps) {
+export default function ItemCard({ itemData, i }: ItemCardProps) {
   const [state, setState] = useState();
   const { cartItems, setCartItems } = useCart();
 
@@ -34,8 +36,17 @@ export default function ItemCard({ itemData }: ItemCardProps) {
     return newNumber;
   };
 
+  const animProps = {
+    initial: { opacity: 0, x: -300 },
+    whileInView: { opacity: 1, x: 0 },
+  };
+
   return (
-    <S.Content>
+    <S.Content
+      as={motion.div}
+      {...animProps}
+      transition={{ duration: 0.5, delay: i * 0.1 }}
+    >
       <S.ItemInfoBox>
         <S.ItemImage
           $width="180px"

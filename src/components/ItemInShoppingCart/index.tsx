@@ -5,13 +5,16 @@ import { theme } from "@/styles/themes";
 import { ItemData } from "@/interfaces/item-data";
 import * as ICS from "../ItemCard/styles";
 import { useCart } from "@/contexts/cartContext";
+import { motion } from "framer-motion";
 
 interface ItemInShoppingCartProps {
   cartItemData: ItemData;
+  i: number;
 }
 
 export default function ItemInShoppingCart({
   cartItemData,
+  i,
 }: ItemInShoppingCartProps) {
   const { setCartItems } = useCart();
 
@@ -43,8 +46,17 @@ export default function ItemInShoppingCart({
     });
   };
 
+  const animProps = {
+    initial: { opacity: 0, x: -300 },
+    whileInView: { opacity: 1, x: 0 },
+  };
+
   return (
-    <S.Content>
+    <S.Content
+      as={motion.div}
+      {...animProps}
+      transition={{ duration: 0.2, delay: i * 0.1 }}
+    >
       <S.FlexContainerRow $alignItems="center" $gap="12px" $gapTablet="21px">
         <ICS.ItemImage
           $width="46px"

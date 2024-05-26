@@ -5,6 +5,7 @@ import ShoppingCart from "@/components/ShoppingCart";
 import { CartProvider, useCart } from "@/contexts/cartContext";
 import { useItemData } from "@/hooks/useItemData";
 import Head from "next/head";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const { openCart } = useCart();
@@ -21,11 +22,7 @@ export default function Home() {
         <Header />
         <Main />
         <Footer />
-        {openCart && (
-          <>
-            <ShoppingCart />
-          </>
-        )}
+        <AnimatePresence>{openCart && <ShoppingCart />}</AnimatePresence>
       </main>
     </>
   );
