@@ -12,6 +12,7 @@ type ColorTheme = {
   };
   yellow: string;
   blue: string;
+  purple: string;
 };
 
 type FontTheme = {
@@ -43,6 +44,7 @@ export const theme: Theme = {
     black: "#000000",
     blue: "#0F52BA",
     yellow: "#fff000",
+    purple: "#a455e0",
   },
   fonts: {
     montserrat: {

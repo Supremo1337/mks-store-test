@@ -49,7 +49,7 @@ export const CloseButton = styled.button`
   cursor: pointer;
 
   border-radius: 50%;
-  background: #000000;
+  background: ${theme.colors.black};
   border: 0;
 `;
 
@@ -86,7 +86,7 @@ export const ContinueToExplore = styled.button`
   justify-content: center;
   cursor: pointer;
 
-  background: #a455e0;
+  background: ${theme.colors.purple};
   border: 0;
   border-radius: 8px;
 `;
