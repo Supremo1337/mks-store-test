@@ -2,10 +2,9 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Main from "@/components/Main";
 import ShoppingCart from "@/components/ShoppingCart";
-import { CartProvider, useCart } from "@/contexts/cartContext";
-import { useItemData } from "@/hooks/useItemData";
+import { useCart } from "@/contexts/cartContext";
 import Head from "next/head";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const { openCart } = useCart();
@@ -23,7 +22,6 @@ export default function Home() {
         <Main />
         <Footer />
         <AnimatePresence>{openCart && <ShoppingCart />}</AnimatePresence>
-        {/* {openCart && <ShoppingCart />} */}
       </main>
     </>
   );

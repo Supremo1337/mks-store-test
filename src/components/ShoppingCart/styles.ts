@@ -37,15 +37,17 @@ export const TitleAndCloseBox = styled.div`
   justify-content: space-between;
 `;
 
-export const CloseButton = styled.div`
+export const CloseButton = styled.button`
   width: 38px;
   height: 38px;
-  border-radius: 50%;
-  background: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  border-radius: 50%;
+  background: #000000;
+  border: 0;
 `;
 
 export const ItemsContainer = styled.div`
@@ -68,7 +70,7 @@ export const TotalContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const CheckoutButton = styled.div`
+export const CheckoutButton = styled.button`
   width: 100%;
   height: 97px;
   display: flex;
@@ -76,4 +78,6 @@ export const CheckoutButton = styled.div`
   justify-content: center;
   background: ${theme.colors.black};
   cursor: pointer;
+
+  border: 0;
 `;

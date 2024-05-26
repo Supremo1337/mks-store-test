@@ -10,7 +10,7 @@ export const Content = styled.div`
   padding: 15px 5%;
 `;
 
-export const ShoppingCartButton = styled.div`
+export const ShoppingCartButton = styled.button`
   width: 90px;
   height: 45px;
   display: flex;
@@ -25,6 +25,7 @@ export const ShoppingCartButton = styled.div`
   font-size: 18px;
 
   cursor: pointer;
+  border: 0;
 `;
 
 export const Vector = styled.img``;

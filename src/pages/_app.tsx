@@ -1,8 +1,8 @@
 import type { AppProps } from "next/app";
-import { Globaltyles } from "@/styles/globalStyles";
 import "@fontsource/montserrat";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { CartProvider } from "@/contexts/cartContext";
+import { Globaltyles } from "@/styles/globalStyles";
 
 const client = new QueryClient();
 

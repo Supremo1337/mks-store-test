@@ -13,15 +13,15 @@ export default function Main() {
     <S.Content>
       {data?.map((itemData: ItemData, i: number) => {
         return (
-          <>
+          <React.Fragment key={itemData.id}>
             {isLoading ? (
               <Skeleton variant="rounded" width={217} height={285} />
             ) : (
               <AnimatePresence>
-                <ItemCard key={itemData.id} itemData={itemData} i={i} />{" "}
+                <ItemCard itemData={itemData} i={i} />{" "}
               </AnimatePresence>
             )}
-          </>
+          </React.Fragment>
         );
       })}
     </S.Content>

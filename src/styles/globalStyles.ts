@@ -9,8 +9,9 @@ export interface ImageProps {
 }
 
 interface TextsProps {
-  $fontSize?: string;
   $color?: string;
+  $fontSize?: string;
+  $fontSizeLaptop?: string;
 }
 
 interface LongTextsProps {
@@ -60,6 +61,9 @@ export const BoldText = styled.p<TextsProps>`
   color: ${theme.colors.white.white_100};
   color: ${(props) => props.$color};
   text-transform: capitalize;
+  @media (min-width: 1024px) {
+    font-size: ${(props) => props.$fontSizeLaptop};
+  }
 `;
 
 export const SemiboldText = styled.div<TextsProps>`

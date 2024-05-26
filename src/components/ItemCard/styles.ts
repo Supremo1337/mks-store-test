@@ -58,7 +58,7 @@ export const PriceBox = styled.div`
   border-radius: 5px;
 `;
 
-export const AddToShoppingCartButton = styled.div`
+export const AddToShoppingCartButton = styled.button`
   width: 100%;
   height: 32px;
 
@@ -71,4 +71,5 @@ export const AddToShoppingCartButton = styled.div`
 
   background: ${theme.colors.blue};
   border-radius: 0 0 8px 8px;
+  border: 0;
 `;

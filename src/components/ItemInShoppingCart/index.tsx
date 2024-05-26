@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import * as S from "./styles";
 import * as GS from "@/styles/globalStyles";
 import { theme } from "@/styles/themes";

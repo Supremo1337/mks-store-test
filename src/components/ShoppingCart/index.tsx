@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import * as S from "./styles";
 import * as GS from "@/styles/globalStyles";
 import { theme } from "@/styles/themes";
@@ -31,7 +31,11 @@ export default function ShoppingCart() {
     <S.Content as={motion.div} {...animProps} transition={{ duration: 0.5 }}>
       <S.CartContent>
         <S.TitleAndCloseBox>
-          <GS.BoldText $fontSize="24px" color={theme.colors.white.white_100}>
+          <GS.BoldText
+            color={theme.colors.white.white_100}
+            $fontSize="24px"
+            $fontSizeLaptop="28px"
+          >
             Carrinho de compras
           </GS.BoldText>
           <S.CloseButton
@@ -49,17 +53,13 @@ export default function ShoppingCart() {
         <S.ItemsContainer>
           {cartItems.data.map((cartItemData: ItemData, i: number) => {
             return (
-              <>
+              <React.Fragment key={cartItemData.id}>
                 {isLoading ? (
                   <Skeleton variant="rounded" width="97%" height={100} />
                 ) : (
-                  <ItemInShoppingCart
-                    key={cartItemData.id}
-                    cartItemData={cartItemData}
-                    i={i}
-                  />
+                  <ItemInShoppingCart cartItemData={cartItemData} i={i} />
                 )}
-              </>
+              </React.Fragment>
             );
           })}
         </S.ItemsContainer>
