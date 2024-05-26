@@ -5,9 +5,12 @@ import { theme } from "@/styles/themes";
 import ItemInShoppingCart from "../ItemInShoppingCart";
 import { useCart } from "@/contexts/cartContext";
 import { ItemData } from "@/interfaces/item-data";
+import { useItemData } from "@/hooks/useItemData";
+import { Skeleton } from "@mui/material";
 
 export default function ShoppingCart() {
   const { setOpenCart, cartItems } = useCart();
+  const { isLoading } = useItemData();
 
   const getTotalPrice = () => {
     let sum = 0;
@@ -39,10 +42,16 @@ export default function ShoppingCart() {
         <S.ItemsContainer>
           {cartItems.data.map((cartItemData: ItemData) => {
             return (
-              <ItemInShoppingCart
-                key={cartItemData.id}
-                cartItemData={cartItemData}
-              />
+              <>
+                {isLoading ? (
+                  <Skeleton variant="rounded" width="97%" height={100} />
+                ) : (
+                  <ItemInShoppingCart
+                    key={cartItemData.id}
+                    cartItemData={cartItemData}
+                  />
+                )}
+              </>
             );
           })}
         </S.ItemsContainer>
