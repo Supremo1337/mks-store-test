@@ -3,33 +3,54 @@ import * as S from "./styles";
 import * as GS from "@/styles/globalStyles";
 import { theme } from "@/styles/themes";
 import ItemInShoppingCart from "../ItemInShoppingCart";
+import { useCart } from "@/contexts/cartContext";
+import { ItemData } from "@/interfaces/item-data";
 
 export default function ShoppingCart() {
-  const [state, setState] = useState();
+  const { setOpenCart, cartItems } = useCart();
+
+  const getTotalPrice = () => {
+    let sum = 0;
+    for (let item of cartItems.data) {
+      sum += item.price * item.quantity;
+    }
+    return sum;
+  };
+
+  console.log(getTotalPrice());
 
   return (
     <S.Content>
       <S.CartContent>
         <S.TitleAndCloseBox>
-          <GS.BoldText color={theme.colors.white.white_100}>
+          <GS.BoldText $fontSize="24px" color={theme.colors.white.white_100}>
             Carrinho de compras
           </GS.BoldText>
           <S.CloseButton>
             <GS.NormalText
               $fontSize="28px"
               $color={theme.colors.white.white_100}
+              onClick={() => setOpenCart(false)}
             >
               X
             </GS.NormalText>
           </S.CloseButton>
         </S.TitleAndCloseBox>
         <S.ItemsContainer>
-          <ItemInShoppingCart />
-          <ItemInShoppingCart />
+          {cartItems.data.map((cartItemData: ItemData) => {
+            return (
+              <ItemInShoppingCart
+                key={cartItemData.id}
+                cartItemData={cartItemData}
+              />
+            );
+          })}
         </S.ItemsContainer>
         <S.TotalContainer>
           <GS.BoldText color={theme.colors.white.white_100}>Total:</GS.BoldText>
-          <GS.BoldText color={theme.colors.white.white_100}>R$768</GS.BoldText>
+          <GS.BoldText color={theme.colors.white.white_100}>
+            R${getTotalPrice()}
+          </GS.BoldText>
         </S.TotalContainer>
       </S.CartContent>
       <S.CheckoutButton>

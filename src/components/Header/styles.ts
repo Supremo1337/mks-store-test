@@ -7,7 +7,7 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5%;
+  padding: 15px 5%;
 `;
 
 export const ShoppingCartButton = styled.div`
@@ -15,13 +15,16 @@ export const ShoppingCartButton = styled.div`
   height: 45px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  padding-right: 15px;
-
+  justify-content: left;
+  gap: 15px;
+  padding: 15px 15px;
   background: ${theme.colors.white.white_100};
   border-radius: 8px;
 
   font: ${theme.fonts.montserrat.boldText};
   font-size: 18px;
+
+  cursor: pointer;
 `;
+
 export const Vector = styled.img``;

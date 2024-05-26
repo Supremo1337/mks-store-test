@@ -1,28 +1,41 @@
 import { theme } from "@/styles/themes";
 import styled from "styled-components";
+import { CloseButton } from "../ShoppingCart/styles";
+
+interface FlexContainerRowProps {
+  $gap: string;
+  $gapTablet: string;
+  $alignItems: string;
+}
 
 export const Content = styled.div`
-  width: 100%;
+  width: 324.94px;
   height: 100px;
+  flex-shrink: 0;
 
   display: flex;
-  padding: 20px;
-  justify-content: space-between;
+  padding: 15px;
+  gap: 9px;
   align-items: center;
 
   background: ${theme.colors.white.white_100};
   border-radius: 8px;
+  position: relative;
+  z-index: 2;
+
+  @media (min-width: 486px) {
+    gap: 25px;
+    width: 97%;
+  }
 `;
 
-export const LittleItemImage = styled.div`
-  /* width: max-content; */
-  width: 46px;
-  height: 57px;
-
-  background-image: url("/icon/apple-watch.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+export const FlexContainerRow = styled.div<FlexContainerRowProps>`
+  display: flex;
+  gap: ${(props) => props.$gap};
+  align-items: ${(props) => props.$alignItems};
+  @media (min-width: 486px) {
+    gap: ${(props) => props.$gapTablet};
+  }
 `;
 
 export const TextLimiter = styled.div`
@@ -33,25 +46,40 @@ export const QuantityBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
-
-  /* background: green; */
 `;
 
 export const QuantityInput = styled.div`
-  width: 50px;
+  width: 80px;
   height: 19px;
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 
   background: ${theme.colors.white.white_100};
   border: 0.3px solid ${theme.colors.gray.gray_600};
   border-radius: 4px;
+  padding: 0 4px;
 `;
 
 export const Divisor = styled.div`
   width: 1px;
   height: 10px;
   background: ${theme.colors.gray.gray_600};
+`;
+
+export const CartItemCloseButton = styled(CloseButton)`
+  width: 18px;
+  height: 18px;
+
+  position: absolute;
+  top: -7%;
+  left: 97%;
+  z-index: 3;
+`;
+
+export const GroupDivisorAndOperator = styled.div`
+  display: flex;
+  gap: 8px;
+  align-items: center;
 `;

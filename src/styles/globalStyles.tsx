@@ -13,6 +13,12 @@ interface TextsProps {
   $color?: string;
 }
 
+interface LongTextsProps {
+  $fontSize?: string;
+  $color?: string;
+  $isLongText?: boolean;
+}
+
 export const Globaltyles = createGlobalStyle`
 * {
   box-sizing: border-box;
@@ -66,16 +72,29 @@ export const SemiboldText = styled.div<TextsProps>`
   }
 `;
 
-export const NormalText = styled.p<TextsProps>`
+export const NormalText = styled.p<LongTextsProps>`
   font: ${theme.fonts.montserrat.normalText};
   font-size: ${(props) => props.$fontSize};
   color: ${(props) => props.$color};
   text-transform: capitalize;
+  text-overflow: ${(props) => (props.$isLongText ? "ellipsis" : "")};
+  overflow: ${(props) => (props.$isLongText ? "hidden" : "")};
+  display: ${(props) => (props.$isLongText ? "-webkit-box !important" : "")};
+  -webkit-line-clamp: ${(props) => (props.$isLongText ? 2 : "")};
+  -webkit-box-orient: ${(props) => (props.$isLongText ? "vertical" : "")};
+  white-space: ${(props) => (props.$isLongText ? "normal" : "")};
+
+  width: ${(props) => (props.$isLongText ? "min-content" : "")};
 `;
 
-export const LightText = styled.p<TextsProps>`
+export const LightText = styled.p<LongTextsProps>`
   font: ${theme.fonts.montserrat.lightText};
   font-size: ${(props) => props.$fontSize};
   color: ${theme.colors.gray.gray_900};
-  text-transform: capitalize;
+  text-overflow: ${(props) => (props.$isLongText ? "ellipsis" : "")};
+  overflow: ${(props) => (props.$isLongText ? "hidden" : "")};
+  display: ${(props) => (props.$isLongText ? "-webkit-box !important" : "")};
+  -webkit-line-clamp: ${(props) => (props.$isLongText ? 2 : "")};
+  -webkit-box-orient: ${(props) => (props.$isLongText ? "vertical" : "")};
+  white-space: ${(props) => (props.$isLongText ? "normal" : "")};
 `;

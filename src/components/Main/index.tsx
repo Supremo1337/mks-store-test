@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import * as S from "./styles";
 import ItemCard from "../ItemCard";
-import { ItemsContainer } from "../ShoppingCart/styles";
+import { ItemData, ItemResponse } from "@/interfaces/item-data";
+import { useItemData } from "@/hooks/useItemData";
 
 export default function Main() {
-  const [state, setState] = useState();
+  const { data, isLoading, isError } = useItemData();
+
+  console.log("data", data);
 
   return (
     <S.Content>
-      <ItemCard />
-      <ItemCard />
+      {data?.map((itemData: ItemData) => {
+        return <ItemCard key={itemData.id} itemData={itemData} />;
+      })}
     </S.Content>
   );
 }

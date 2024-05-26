@@ -1,6 +1,12 @@
 import { theme } from "@/styles/themes";
 import styled from "styled-components";
 
+interface ItemImage {
+  $image: string;
+  $width: string;
+  $height: string;
+}
+
 export const Content = styled.div`
   width: 217px;
   height: 285px;
@@ -23,21 +29,23 @@ export const ItemInfoBox = styled.div`
   gap: 8px;
 `;
 
-export const ItemImage = styled.div`
+export const ItemImage = styled.div<ItemImage>`
   /* width: max-content; */
-  width: 180px;
-  height: 138px;
+  width: ${(props) => props.$width};
+  height: ${(props) => props.$height};
 
-  background-image: url("/icon/apple-watch.png");
+  background-image: ${(props) => props.$image};
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 `;
 
 export const NameAndPriceBox = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
-  margin-top: 6px;
+  justify-content: space-between;
+  gap: 5px;
 `;
 
 export const PriceBox = styled.div`

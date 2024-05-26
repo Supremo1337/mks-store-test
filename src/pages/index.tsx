@@ -2,9 +2,13 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Main from "@/components/Main";
 import ShoppingCart from "@/components/ShoppingCart";
+import { CartProvider, useCart } from "@/contexts/cartContext";
+import { useItemData } from "@/hooks/useItemData";
 import Head from "next/head";
 
 export default function Home() {
+  const { openCart } = useCart();
+  console.log("main", openCart);
   return (
     <>
       <Head>
@@ -17,7 +21,11 @@ export default function Home() {
         <Header />
         <Main />
         <Footer />
-        {/* <ShoppingCart /> */}
+        {openCart && (
+          <>
+            <ShoppingCart />
+          </>
+        )}
       </main>
     </>
   );
