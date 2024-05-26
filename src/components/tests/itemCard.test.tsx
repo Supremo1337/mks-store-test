@@ -74,4 +74,41 @@ describe("ItemCard", () => {
 
     expect(screen.getByText(name)).toBeInTheDocument();
   });
+
+  it("should format price correctly using numberFormat function", () => {
+    const price = 1000.0;
+    const itemData = {
+      id: 1,
+      name: "Product 1",
+      price,
+      photo: "/img/image.jpg",
+      description: "Description for Product 1",
+      quantity: 1,
+      brand: "Product 1 brand",
+      createdAt: "Product 1 created date",
+      updatedAt: "Product 1 updated date",
+    };
+    let i = 1;
+    const client = new QueryClient();
+
+    render(
+      <QueryClientProvider client={client}>
+        <CartProvider>
+          <ItemCard i={i} itemData={itemData} />
+        </CartProvider>
+      </QueryClientProvider>
+    );
+
+    const numberFormat = (number: number) => {
+      const newNumber = number.toString().replace(".00", "");
+      return newNumber;
+    };
+
+    const formattedPrice = numberFormat(price);
+    const priceElement = screen.getByText((content, element) => {
+      return content.includes(formattedPrice);
+    });
+
+    expect(priceElement).toBeInTheDocument();
+  });
 });
