@@ -35,7 +35,7 @@ Confira essa lista de tudo que vamos usar nesse app:
 
 Para abrir e executar o projeto, execute `npm i` para instalar as dependências e `npm run dev` para iniciar o projeto.
 
-Em seguida, vá para <a href="http://localhost:3333/">http://localhost:3333/</a> em seu navegador.
+Em seguida, vá para <a href="http://localhost:3000">http://localhost:3000</a> em seu navegador.
 
 ## 💻 Deployment
 
