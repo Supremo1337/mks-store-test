@@ -1,6 +1,11 @@
 import { theme } from "@/styles/themes";
 import styled from "styled-components";
 
+interface ItemsContainerProps {
+  $overflow: string;
+  $jContent: string;
+}
+
 export const Content = styled.div`
   width: 100%;
   height: 100vh;
@@ -28,8 +33,6 @@ export const CartContent = styled.div`
   @media (min-width: 486px) {
     padding: 30px;
   }
-
-  /* background-color: yellow; */
 `;
 
 export const TitleAndCloseBox = styled.div`
@@ -50,19 +53,42 @@ export const CloseButton = styled.button`
   border: 0;
 `;
 
-export const ItemsContainer = styled.div`
+export const ItemsContainer = styled.div<ItemsContainerProps>`
   max-height: 516px;
 
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  overflow: auto;
+  overflow: ${(props) => props.$overflow};
   padding-top: 9px;
+
+  justify-content: ${(props) => props.$jContent};
 
   @media (min-width: 486px) {
     align-items: center;
   }
+`;
+
+export const CartEmpty = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const ContinueToExplore = styled.button`
+  width: max-content;
+  height: 55px;
+  padding: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  background: #a455e0;
+  border: 0;
+  border-radius: 8px;
 `;
 
 export const TotalContainer = styled.div`
