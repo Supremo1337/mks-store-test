@@ -18,14 +18,16 @@ interface LongTextsProps {
   $fontSize?: string;
   $color?: string;
   $isLongText?: boolean;
+  $cursor?: string;
 }
 
-export const Globaltyles = createGlobalStyle`
+export const GlobaltSyles = createGlobalStyle`
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: "Montserrat";
+  user-select: none;
 }
 
 main{
@@ -87,6 +89,8 @@ export const NormalText = styled.p<LongTextsProps>`
   -webkit-line-clamp: ${(props) => (props.$isLongText ? 2 : "")};
   -webkit-box-orient: ${(props) => (props.$isLongText ? "vertical" : "")};
   white-space: ${(props) => (props.$isLongText ? "normal" : "")};
+
+  cursor: ${(props) => props.$cursor};
 
   width: ${(props) => (props.$isLongText ? "min-content" : "")};
 `;

@@ -82,6 +82,7 @@ export default function ItemInShoppingCart({
                 data-testid="decreaseBtn"
                 $fontSize="14px"
                 $color={theme.colors.black}
+                $cursor="pointer"
                 onClick={() => handleAlterQuantity(cartItemData, "decrease")}
               >
                 -
@@ -98,6 +99,7 @@ export default function ItemInShoppingCart({
                 data-testid="increaseBtn"
                 $fontSize="14px"
                 $color={theme.colors.black}
+                $cursor="pointer"
                 onClick={() => handleAlterQuantity(cartItemData, "increase")}
               >
                 +
