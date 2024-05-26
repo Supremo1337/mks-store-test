@@ -9,12 +9,6 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function Main() {
   const { data, isLoading } = useItemData();
 
-  const animProps = {
-    initial: { opacity: 0, x: 400 },
-    whileInView: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 400 },
-  };
-
   return (
     <S.Content>
       {data?.map((itemData: ItemData, i: number) => {

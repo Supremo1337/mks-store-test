@@ -79,6 +79,7 @@ export default function ItemInShoppingCart({
           <S.QuantityInput>
             <S.GroupDivisorAndOperator>
               <GS.NormalText
+                data-testid="decreaseBtn"
                 $fontSize="14px"
                 $color={theme.colors.black}
                 onClick={() => handleAlterQuantity(cartItemData, "decrease")}
@@ -94,6 +95,7 @@ export default function ItemInShoppingCart({
             <S.GroupDivisorAndOperator>
               <S.Divisor />
               <GS.NormalText
+                data-testid="increaseBtn"
                 $fontSize="14px"
                 $color={theme.colors.black}
                 onClick={() => handleAlterQuantity(cartItemData, "increase")}

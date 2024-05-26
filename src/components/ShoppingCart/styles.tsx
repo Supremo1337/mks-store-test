@@ -75,4 +75,5 @@ export const CheckoutButton = styled.div`
   align-items: center;
   justify-content: center;
   background: ${theme.colors.black};
+  cursor: pointer;
 `;
