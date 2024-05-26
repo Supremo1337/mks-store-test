@@ -1,40 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mks Sistemas
 
-## Getting Started
+Esse desafio consiste em consumir a Api fornecidada pelos avaliadores e aplica-la no front-end, o layout da aplicação também foi fornecida por meio de um Figma pela empresa
 
-First, run the development server:
+Esse teste é para concorrer a uma vaga de Junior Front-end Developer
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🔨 Recursos do projeto
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O propósito primordial desta avaliação consiste em analisar sua proficiência na elaboração de código que seja claro, meticulosamente testado e passível de reutilização. Ao concluir a tarefa, solicitamos a gentileza de proceder com o deployment da aplicação e de nos fornecer, concomitantemente, os links correspondentes ao aplicativo e ao repositório associado. Este procedimento possibilitará uma análise abrangente do seu desempenho, sendo de suma importância para o desdobramento subsequente do processo avaliativo.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Aqui estão as tecnologias requeridas:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- `TypeScript`
+- `React ou Next.js (Preferimos Next.js)`
+- `React-query`
+- `Styled-components ou SASS`
+- `Framer-motion`
+- `Jest`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## ⚙️ Técnicas e tecnologias usadas
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Confira essa lista de tudo que vamos usar nesse app:
 
-## Learn More
+- `TypeScript`
+- `Next.js`
+- `React-query`
+- `Styled-components`
+- `Framer-motion`
+- `Jest`
+- `Emotion`
+- `Vercel Deployment`
+- `GitHub`
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Abra e execute o projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Para abrir e executar o projeto, execute `npm i` para instalar as dependências e `npm run dev` para iniciar o projeto.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Em seguida, vá para <a href="http://localhost:3333/">http://localhost:3333/</a> em seu navegador.
