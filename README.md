@@ -36,3 +36,7 @@ Confira essa lista de tudo que vamos usar nesse app:
 Para abrir e executar o projeto, execute `npm i` para instalar as dependências e `npm run dev` para iniciar o projeto.
 
 Em seguida, vá para <a href="http://localhost:3333/">http://localhost:3333/</a> em seu navegador.
+
+## 💻 Deployment
+
+Também é possivel ver o site por meio deste link <a href="https://mks-store-test-two.vercel.app">https://mks-store-test-two.vercel.app</a> ele o levará para o deploy do site feito pela Vercel.
