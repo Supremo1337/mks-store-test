@@ -38,9 +38,6 @@ main{
 }
 
 body {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   background: ${theme.colors.white.white_200};
 }
 

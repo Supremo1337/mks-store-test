@@ -27,13 +27,9 @@ class MockIntersectionObserver implements IntersectionObserver {
     );
   }
 
-  unobserve(target: Element): void {
-    // no-op
-  }
+  unobserve(target: Element): void {}
 
-  disconnect(): void {
-    // no-op
-  }
+  disconnect(): void {}
 
   takeRecords(): IntersectionObserverEntry[] {
     return [];

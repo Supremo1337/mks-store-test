@@ -76,7 +76,7 @@ describe("ItemInShoppingCart", () => {
     await waitFor(() => {
       const product1Name = screen.getByText("Product 1");
       const product1Quantity = screen.getByText("2");
-      const product1Price = screen.getByText("R$40"); // 2 x 20.00
+      const product1Price = screen.getByText("R$40");
 
       const product2Name = screen.getByText("Product 2");
       const product2Quantity = screen.getByText("1");

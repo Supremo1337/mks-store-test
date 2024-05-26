@@ -30,13 +30,6 @@ const renderComponent = () => {
 describe("ShoppingCart", () => {
   it("should close ShoppingCart when hits the button 'X' or 'Continuar explorando'", () => {
     renderComponent();
-    // render(
-    //   <QueryClientProvider client={client}>
-    //     <CartProvider>
-    //       <ShoppingCart />
-    //     </CartProvider>
-    //   </QueryClientProvider>
-    // );
 
     const btnShoppingCart = screen.getByTestId("closeCartBtn");
     const btnContinueToExplore = screen.getByTestId("continueToExploreCartBtn");

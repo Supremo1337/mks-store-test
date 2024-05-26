@@ -30,7 +30,6 @@ export const ItemInfoBox = styled.div`
 `;
 
 export const ItemImage = styled.div<ItemImage>`
-  /* width: max-content; */
   width: ${(props) => props.$width};
   height: ${(props) => props.$height};
 
