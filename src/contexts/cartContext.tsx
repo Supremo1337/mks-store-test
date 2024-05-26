@@ -1,10 +1,5 @@
 import { ItemData, ItemResponse } from "@/interfaces/item-data";
-import React, {
-  PropsWithChildren,
-  createContext,
-  useState,
-  useContext,
-} from "react";
+import * as React from "react";
 
 interface CartContextData {
   cartItems: { data: ItemData[] };
@@ -17,11 +12,13 @@ interface CartContextData {
   setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const CartContext = createContext({} as CartContextData);
+const CartContext = React.createContext({} as CartContextData);
 
-export const CartProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [cartItems, setCartItems] = useState({ data: [] as ItemData[] });
-  const [openCart, setOpenCart] = useState(false);
+export const CartProvider: React.FC<React.PropsWithChildren> = ({
+  children,
+}) => {
+  const [cartItems, setCartItems] = React.useState({ data: [] as ItemData[] });
+  const [openCart, setOpenCart] = React.useState(false);
 
   return (
     <CartContext.Provider
@@ -38,7 +35,7 @@ export const CartProvider: React.FC<PropsWithChildren> = ({ children }) => {
 };
 
 export function useCart() {
-  const context = useContext(CartContext);
+  const context = React.useContext(CartContext);
 
   if (!context) {
     throw new Error("useCart must be used within an CartProvider");
