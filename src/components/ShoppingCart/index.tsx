@@ -22,9 +22,9 @@ export default function ShoppingCart() {
   };
 
   const animProps = {
-    initial: { opacity: 0, x: 400 },
+    initial: { opacity: 0, x: 375 },
     whileInView: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 400 },
+    exit: { opacity: 0, x: 375 },
   };
 
   return (
@@ -50,18 +50,48 @@ export default function ShoppingCart() {
             </GS.NormalText>
           </S.CloseButton>
         </S.TitleAndCloseBox>
-        <S.ItemsContainer>
-          {cartItems.data.map((cartItemData: ItemData, i: number) => {
-            return (
-              <React.Fragment key={cartItemData.id}>
-                {isLoading ? (
-                  <Skeleton variant="rounded" width="97%" height={100} />
-                ) : (
-                  <ItemInShoppingCart cartItemData={cartItemData} i={i} />
-                )}
-              </React.Fragment>
-            );
-          })}
+        <S.ItemsContainer
+          $overflow={cartItems.data.length !== 0 ? "auto" : ""}
+          $jContent={cartItems.data.length !== 0 ? "" : "center"}
+        >
+          {cartItems.data.length !== 0 ? (
+            <>
+              {cartItems.data.map((cartItemData: ItemData, i: number) => {
+                return (
+                  <React.Fragment key={cartItemData.id}>
+                    <>
+                      {isLoading ? (
+                        <Skeleton variant="rounded" width="97%" height={100} />
+                      ) : (
+                        <ItemInShoppingCart cartItemData={cartItemData} i={i} />
+                      )}
+                    </>
+                  </React.Fragment>
+                );
+              })}
+            </>
+          ) : (
+            <S.CartEmpty
+              as={motion.div}
+              {...animProps}
+              transition={{ duration: 0.5 }}
+            >
+              <GS.BoldText
+                $fontSize="20px"
+                $color={theme.colors.white.white_100}
+              >
+                Carrinho vazio? Continue explorando
+              </GS.BoldText>
+              <S.ContinueToExplore onClick={() => setOpenCart(false)}>
+                <GS.BoldText
+                  $fontSize="20px"
+                  $color={theme.colors.white.white_100}
+                >
+                  Continuar explorando
+                </GS.BoldText>
+              </S.ContinueToExplore>
+            </S.CartEmpty>
+          )}
         </S.ItemsContainer>
         <S.TotalContainer>
           <GS.BoldText color={theme.colors.white.white_100}>Total:</GS.BoldText>
