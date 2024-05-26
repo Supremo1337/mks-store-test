@@ -39,7 +39,7 @@ export default function ShoppingCart() {
             Carrinho de compras
           </GS.BoldText>
           <S.CloseButton
-            data-testid="closeCart"
+            data-testid="closeCartBtn"
             onClick={() => setOpenCart(false)}
           >
             <GS.NormalText
@@ -82,7 +82,10 @@ export default function ShoppingCart() {
               >
                 Carrinho vazio? Continue explorando
               </GS.BoldText>
-              <S.ContinueToExplore onClick={() => setOpenCart(false)}>
+              <S.ContinueToExplore
+                data-testid="continueToExploreCartBtn"
+                onClick={() => setOpenCart(false)}
+              >
                 <GS.BoldText
                   $fontSize="20px"
                   $color={theme.colors.white.white_100}

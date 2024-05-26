@@ -15,21 +15,35 @@ jest.mock("../../contexts/cartContext", () => ({
   }),
 }));
 
+const renderComponent = () => {
+  const client = new QueryClient();
+
+  render(
+    <QueryClientProvider client={client}>
+      <CartProvider>
+        <ShoppingCart />
+      </CartProvider>
+    </QueryClientProvider>
+  );
+};
+
 describe("ShoppingCart", () => {
-  it("should close ItemInShoppingCart when hits the button 'X'", () => {
-    const client = new QueryClient();
+  it("should close ShoppingCart when hits the button 'X' or 'Continuar explorando'", () => {
+    renderComponent();
+    // render(
+    //   <QueryClientProvider client={client}>
+    //     <CartProvider>
+    //       <ShoppingCart />
+    //     </CartProvider>
+    //   </QueryClientProvider>
+    // );
 
-    render(
-      <QueryClientProvider client={client}>
-        <CartProvider>
-          <ShoppingCart />
-        </CartProvider>
-      </QueryClientProvider>
-    );
-
-    const btnShoppingCart = screen.getByTestId("closeCart");
+    const btnShoppingCart = screen.getByTestId("closeCartBtn");
+    const btnContinueToExplore = screen.getByTestId("continueToExploreCartBtn");
 
     fireEvent.click(btnShoppingCart);
+
+    fireEvent.click(btnContinueToExplore);
 
     expect(mockSetOpenCart).toHaveBeenCalledWith(false);
   });
