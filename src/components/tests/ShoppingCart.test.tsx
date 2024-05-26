@@ -34,21 +34,4 @@ describe("ShoppingCart", () => {
 
     expect(mockSetOpenCart).toHaveBeenCalledWith(false);
   });
-
-  it("should close ShoppingCart when hits the button ShoppingCartButton", () => {
-    const client = new QueryClient();
-    render(
-      <QueryClientProvider client={client}>
-        <CartProvider>
-          <ShoppingCart />
-        </CartProvider>
-      </QueryClientProvider>
-    );
-
-    const btnShoppingCart = screen.getByTestId("closeCart");
-
-    fireEvent.click(btnShoppingCart);
-
-    expect(mockSetOpenCart).toHaveBeenCalledWith(false);
-  });
 });
