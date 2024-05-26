@@ -13,7 +13,10 @@ export default function Header() {
       <GS.SemiboldText color={theme.colors.white.white_100}>
         MKS <span>Sistemas</span>
       </GS.SemiboldText>
-      <S.ShoppingCartButton onClick={() => setOpenCart(true)}>
+      <S.ShoppingCartButton
+        data-testId="openCart"
+        onClick={() => setOpenCart(true)}
+      >
         <S.Vector src="/icon/Cart.svg" /> {cartItems.data.length}
       </S.ShoppingCartButton>
     </S.Content>

@@ -24,11 +24,13 @@ export default function ShoppingCart() {
           <GS.BoldText $fontSize="24px" color={theme.colors.white.white_100}>
             Carrinho de compras
           </GS.BoldText>
-          <S.CloseButton>
+          <S.CloseButton
+            data-testId="closeCart"
+            onClick={() => setOpenCart(false)}
+          >
             <GS.NormalText
               $fontSize="28px"
               $color={theme.colors.white.white_100}
-              onClick={() => setOpenCart(false)}
             >
               X
             </GS.NormalText>
