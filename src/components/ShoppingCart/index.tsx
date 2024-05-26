@@ -35,7 +35,7 @@ export default function ShoppingCart() {
             Carrinho de compras
           </GS.BoldText>
           <S.CloseButton
-            data-testId="closeCart"
+            data-testid="closeCart"
             onClick={() => setOpenCart(false)}
           >
             <GS.NormalText

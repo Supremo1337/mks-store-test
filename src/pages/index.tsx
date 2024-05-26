@@ -23,6 +23,7 @@ export default function Home() {
         <Main />
         <Footer />
         <AnimatePresence>{openCart && <ShoppingCart />}</AnimatePresence>
+        {/* {openCart && <ShoppingCart />} */}
       </main>
     </>
   );

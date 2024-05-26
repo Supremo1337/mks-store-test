@@ -14,7 +14,7 @@ export default function Header() {
         MKS <span>Sistemas</span>
       </GS.SemiboldText>
       <S.ShoppingCartButton
-        data-testId="openCart"
+        data-testid="openCart"
         onClick={() => setOpenCart(true)}
       >
         <S.Vector src="/icon/Cart.svg" /> {cartItems.data.length}
