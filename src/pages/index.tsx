@@ -8,7 +8,7 @@ import Head from "next/head";
 
 export default function Home() {
   const { openCart } = useCart();
-  console.log("main", openCart);
+
   return (
     <>
       <Head>

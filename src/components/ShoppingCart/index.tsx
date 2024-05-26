@@ -17,8 +17,6 @@ export default function ShoppingCart() {
     return sum;
   };
 
-  console.log(getTotalPrice());
-
   return (
     <S.Content>
       <S.CartContent>

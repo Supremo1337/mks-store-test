@@ -19,7 +19,6 @@ export default function ItemCard({ itemData }: ItemCardProps) {
       const existingItemIndex = prevState.data.findIndex(
         (cartItem) => cartItem.id === itemData.id
       );
-      console.log("existingItemIndex", existingItemIndex);
 
       if (existingItemIndex !== -1) {
         const updatedItems = [...prevState.data];
@@ -29,14 +28,11 @@ export default function ItemCard({ itemData }: ItemCardProps) {
       return { data: [...prevState.data, { ...itemData, quantity: 1 }] };
     });
   };
-  console.log(cartItems);
 
   const numberFormat = (number: number) => {
     const newNumber = number.toString().replace(".00", "");
     return newNumber;
   };
-
-  console.log(numberFormat(itemData.price));
 
   return (
     <S.Content>

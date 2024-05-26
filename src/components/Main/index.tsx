@@ -7,8 +7,6 @@ import { useItemData } from "@/hooks/useItemData";
 export default function Main() {
   const { data, isLoading, isError } = useItemData();
 
-  console.log("data", data);
-
   return (
     <S.Content>
       {data?.map((itemData: ItemData) => {

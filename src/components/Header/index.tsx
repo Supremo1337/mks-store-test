@@ -8,8 +8,6 @@ import { useCart } from "@/contexts/cartContext";
 export default function Header() {
   const { openCart, setOpenCart, cartItems } = useCart();
 
-  console.log(openCart);
-
   return (
     <S.Content>
       <GS.SemiboldText color={theme.colors.white.white_100}>
