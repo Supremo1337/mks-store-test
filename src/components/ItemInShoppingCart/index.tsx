@@ -77,14 +77,11 @@ export default function ItemInShoppingCart({
           </GS.NormalText>
 
           <S.QuantityInput>
-            <S.GroupDivisorAndOperator>
-              <GS.NormalText
-                data-testid="decreaseBtn"
-                $fontSize="14px"
-                $color={theme.colors.black}
-                $cursor="pointer"
-                onClick={() => handleAlterQuantity(cartItemData, "decrease")}
-              >
+            <S.GroupDivisorAndOperator
+              data-testid="decreaseBtn"
+              onClick={() => handleAlterQuantity(cartItemData, "decrease")}
+            >
+              <GS.NormalText $fontSize="14px" $color={theme.colors.black}>
                 -
               </GS.NormalText>
               <S.Divisor />
@@ -93,15 +90,12 @@ export default function ItemInShoppingCart({
             <GS.NormalText $fontSize="14px" $color={theme.colors.black}>
               {cartItemData.quantity}
             </GS.NormalText>
-            <S.GroupDivisorAndOperator>
+            <S.GroupDivisorAndOperator
+              data-testid="increaseBtn"
+              onClick={() => handleAlterQuantity(cartItemData, "increase")}
+            >
               <S.Divisor />
-              <GS.NormalText
-                data-testid="increaseBtn"
-                $fontSize="14px"
-                $color={theme.colors.black}
-                $cursor="pointer"
-                onClick={() => handleAlterQuantity(cartItemData, "increase")}
-              >
+              <GS.NormalText $fontSize="14px" $color={theme.colors.black}>
                 +
               </GS.NormalText>
             </S.GroupDivisorAndOperator>

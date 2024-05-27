@@ -12,7 +12,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: ${theme.colors.blue};
+  background: ${theme.colors.blue.blue_800};
 
   position: fixed;
   right: 0;

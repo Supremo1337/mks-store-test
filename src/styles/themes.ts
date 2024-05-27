@@ -11,7 +11,10 @@ type ColorTheme = {
     white_100: string;
   };
   yellow: string;
-  blue: string;
+  blue: {
+    blue_900: string;
+    blue_800: string;
+  };
   purple: string;
 };
 
@@ -42,7 +45,10 @@ export const theme: Theme = {
       white_100: "#FFFFFF",
     },
     black: "#000000",
-    blue: "#0F52BA",
+    blue: {
+      blue_900: "#133975",
+      blue_800: "#0F52BA",
+    },
     yellow: "#fff000",
     purple: "#a455e0",
   },

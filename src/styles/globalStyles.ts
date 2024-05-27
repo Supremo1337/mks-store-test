@@ -18,7 +18,6 @@ interface LongTextsProps {
   $fontSize?: string;
   $color?: string;
   $isLongText?: boolean;
-  $cursor?: string;
 }
 
 export const GlobaltSyles = createGlobalStyle`
@@ -86,8 +85,6 @@ export const NormalText = styled.p<LongTextsProps>`
   -webkit-line-clamp: ${(props) => (props.$isLongText ? 2 : "")};
   -webkit-box-orient: ${(props) => (props.$isLongText ? "vertical" : "")};
   white-space: ${(props) => (props.$isLongText ? "normal" : "")};
-
-  cursor: ${(props) => props.$cursor};
 
   width: ${(props) => (props.$isLongText ? "min-content" : "")};
 `;

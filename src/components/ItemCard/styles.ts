@@ -68,7 +68,11 @@ export const AddToShoppingCartButton = styled.button`
 
   cursor: pointer;
 
-  background: ${theme.colors.blue};
+  background: ${theme.colors.blue.blue_800};
   border-radius: 0 0 8px 8px;
   border: 0;
+
+  &:hover {
+    background: ${theme.colors.blue.blue_900};
+  }
 `;

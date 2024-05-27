@@ -18,10 +18,13 @@ export const Content = styled.div`
   gap: 9px;
   align-items: center;
 
-  background: ${theme.colors.white.white_100};
   border-radius: 8px;
   position: relative;
   z-index: 2;
+
+  background: ${theme.colors.white.white_100};
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
 
   @media (min-width: 486px) {
     gap: 25px;
@@ -78,8 +81,13 @@ export const CartItemCloseButton = styled(CloseButton)`
   z-index: 3;
 `;
 
-export const GroupDivisorAndOperator = styled.div`
+export const GroupDivisorAndOperator = styled.button`
+  height: 13px;
+
   display: flex;
   gap: 8px;
   align-items: center;
+  cursor: pointer;
+
+  border: none;
 `;
